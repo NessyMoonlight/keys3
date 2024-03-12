@@ -11,7 +11,7 @@ MAX_MONTH = 12
 
 def f_1():
     amount = 0
-    nal = 0
+    tax = 0
     beznal = 0
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.ANNUAL_INCOME_VALUE} {ru.INCOME} {ru.NAME[month]} [USD]: '))
@@ -23,20 +23,20 @@ def f_1():
     bezamount = amount - beznal  # годовой доход неучитываемый налогом
     # Налог если доход < 9075
     if bezamount <= 9075:
-        nal = (bezamount / 10)
+        tax = (bezamount / 10)
     # Налог если доход < 36900
     elif 36901 > bezamount > 9075:
-        nal = ((((bezamount - 9075) / 100) * 15) + (9075 / 100) * 10)
+        tax = ((((bezamount - 9075) / 100) * 15) + (9075 / 100) * 10)
         # Налог если доход > 36900
     else:
-        nal = ((((bezamount - 36900) / 100) * 25) + (((36900 - 9075) / 100) * 15) + (9075 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {beznal} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {nal} {ru.MONTHLY_TAX} {nal / 12}')
+        tax = ((((bezamount - 36900) / 100) * 25) + (((36900 - 9075) / 100) * 15) + (9075 / 100) * 10)
+    print(f'{ru.TAX_FREE_INCOME} {beznal} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
     return amount, beznal
 
 
 def f_2():
     amount = 0
-    nal = 0
+    tax = 0
     beznal = 0
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.ANNUAL_INCOME_VALUE} {ru.INCOME} {ru.NAME[month]} [USD]: '))
@@ -48,20 +48,20 @@ def f_2():
     bezamount = amount - beznal  # годовой доход неучитываемый налогом
     # Налог если доход < 18150
     if bezamount <= 18150:
-        nal = (bezamount / 10)
+        tax = (bezamount / 10)
     # Налог если доход < 73800
     elif 73801 > bezamount > 18150:
-        nal = ((((bezamount - 18150) / 100) * 15) + (18150 / 100) * 10)
+        tax = ((((bezamount - 18150) / 100) * 15) + (18150 / 100) * 10)
         # Налог если доход > 73800
     else:
-        nal = ((((bezamount - 73800) / 100) * 25) + (((73800 - 18150) / 100) * 15) + (18150 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {beznal} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {nal} {ru.MONTHLY_TAX} {nal / 12}')
+        tax = ((((bezamount - 73800) / 100) * 25) + (((73800 - 18150) / 100) * 15) + (18150 / 100) * 10)
+    print(f'{ru.TAX_FREE_INCOME} {beznal} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
     return amount, beznal
 
 
 def f_3():
     amount = 0
-    nal = 0
+    tax = 0
     beznal = 0
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.ANNUAL_INCOME_VALUE} {ru.INCOME} {ru.NAME[month]} [USD]: '))
@@ -73,14 +73,14 @@ def f_3():
     bezamount = amount - beznal  # годовой доход неучитываемый налогом
     # Налог если доход < 12950
     if bezamount <= 12950:
-        nal = (bezamount / 10)
+        tax = (bezamount / 10)
     # Налог если доход < 49400
     elif 49401 > bezamount > 12950:
-        nal = ((((bezamount - 12950) / 100) * 15) + (12950 / 100) * 10)
+        tax = ((((bezamount - 12950) / 100) * 15) + (12950 / 100) * 10)
         # Налог если доход > 49400
     else:
-        nal = ((((bezamount - 49400) / 100) * 25) + (((49400 - 12950) / 100) * 15) + (12950 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {beznal} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {nal} {ru.MONTHLY_TAX} {nal / 12}')
+        tax = ((((bezamount - 49400) / 100) * 25) + (((49400 - 12950) / 100) * 15) + (12950 / 100) * 10)
+    print(f'{ru.TAX_FREE_INCOME} {beznal} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
     return amount, beznal
 
 
