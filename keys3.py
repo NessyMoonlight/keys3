@@ -2,7 +2,7 @@
 # Developers:
 #
 
-kt = int(input('Укажите котегорию налогоплатильщика:'))
+taxpayer_category = int(input('Укажите котегорию налогоплатильщика:'))
 
 MAX_MONTH = 12
 
@@ -64,11 +64,11 @@ def f_3():
     return amount
 
 
-if kt == 1:
+if taxpayer_category == 1:
     f_1()
-elif kt == 2:
+elif taxpayer_category == 2:
     f_2()
-elif kt == 3:
+elif taxpayer_category == 3:
     f_3()
 else:
     print('Такой котегории нет')
