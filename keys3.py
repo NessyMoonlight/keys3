@@ -6,7 +6,7 @@ import ru_local as ru
 
 taxpayer_category = int(input(ru.TAXPAYER_CATEGORY))
 
-MAX_MONTH = 1
+MAX_MONTH = 12
 
 
 def f_1():
