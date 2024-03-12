@@ -6,6 +6,8 @@ import ru_local as ru
 
 taxpayer_category = int(input(ru.TAXPAYER_CATEGORY))
 
+nl = '\n'
+
 MAX_MONTH = 12
 
 
@@ -30,7 +32,7 @@ def f_1():
         # Налог если доход > 36900
     else:
         tax = ((((bezamount - 36900) / 100) * 25) + (((36900 - 9075) / 100) * 15) + (9075 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {free_tax} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
+    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {bezamount} {nl} {ru.ANNUAL_TAX} {tax} {nl} {ru.MONTHLY_TAX} {tax/12}')
     return amount, free_tax
 
 
@@ -55,7 +57,7 @@ def f_2():
         # Налог если доход > 73800
     else:
         tax = ((((bezamount - 73800) / 100) * 25) + (((73800 - 18150) / 100) * 15) + (18150 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {free_tax} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
+    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {bezamount} {nl} {ru.ANNUAL_TAX} {tax} {nl} {ru.MONTHLY_TAX} {tax/12}')
     return amount, free_tax
 
 
@@ -80,7 +82,7 @@ def f_3():
         # Налог если доход > 49400
     else:
         tax = ((((bezamount - 49400) / 100) * 25) + (((49400 - 12950) / 100) * 15) + (12950 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {free_tax} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
+    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {bezamount} {nl} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
     return amount, free_tax
 
 
