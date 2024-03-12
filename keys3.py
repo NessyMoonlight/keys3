@@ -20,16 +20,13 @@ def one_person():
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
-    # Годовой доход
     print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
-    tax_amount = amount - free_tax  # годовой доход неучитываемый налогом
-    # Налог если доход < 9075
+    tax_amount = amount - free_tax
     if tax_amount < 9076:
         tax = (tax_amount * 0.1)
-    # Налог если доход < 36900
     elif 9076 <= tax_amount < 36901:
         tax = (((tax_amount - 9076) * 0.15) + (9075 * 0.1))
     elif 36901 <= tax_amount < 89351:
@@ -58,13 +55,11 @@ def married_couple():
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
-    # Годовой доход
     print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
-    tax_amount = amount - free_tax  # годовой доход неучитываемый налогом
-    # Налог если доход < 18150
+    tax_amount = amount - free_tax
     if tax_amount < 18151:
         tax = (tax_amount * 0.1)
     elif 18151 <= tax_amount < 73801:
