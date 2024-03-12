@@ -80,7 +80,7 @@ def f_3():
     # Налог если доход < 49400
     elif 49401 > bezamount > 12950:
         tax = ((((bezamount - 12950) / 100) * 15) + (12950 / 100) * 10)
-        # Налог если доход > 494000
+        # Налог если доход > 49400
     else:
         tax = ((((bezamount - 49400) / 100) * 25) + (((49400 - 12950) / 100) * 15) + (12950 / 100) * 10)
     print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {bezamount} {nl} {ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
