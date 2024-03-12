@@ -30,7 +30,7 @@ def f_1():
         # Налог если доход > 36900
     else:
         nal = ((((bezamount - 36900) / 100) * 25) + (((36900 - 9075) / 100) * 15) + (9075 / 100) * 10)
-    print(beznal, bezamount, nal, nal / 12)
+    print(f'{ru.TAX_FREE_INCOME} {beznal} {ru.TAX_INCOME} {bezamount} {ru.ANNUAL_TAX} {nal} {ru.MONTHLY_TAX} {nal / 12}')
     return amount, beznal
 
 
