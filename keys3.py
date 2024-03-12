@@ -2,7 +2,9 @@
 # Developers:
 #
 
-taxpayer_category = int(input('Укажите котегорию налогоплатильщика:'))
+import ru_local as ru
+
+taxpayer_category = int(input(ru.TAXPAYER_CATEGORY))
 
 MAX_MONTH = 1
 
@@ -12,11 +14,11 @@ def f_1():
     nal = 0
     beznal = 0
     for month in range(1, MAX_MONTH + 1):
-        value = float(input('месечный доход доход:'))
+        value = float(input(f'{ru.ANNUAL_INCOME_VALUE} {ru.NAME[month]} [USD]: '))
         amount += value
     # Годовой доход
     for month in range(1, MAX_MONTH + 1):
-        value = float(input('месечный доход без налога:'))
+        value = float(input(f'{ru.TAX_FREE_AMOUNT} {ru.NAME[month]} [USD]: '))
         beznal += value
     bezamount = amount - beznal  # годовой доход неучитываемый налогом
     # Налог если доход < 9075
