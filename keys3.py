@@ -1,3 +1,7 @@
+# Case-study #3
+# Developers:
+#
+
 kt = int(input('Укажите котегорию налогоплатильщика:'))
 
 MAX_MONTH = 12
