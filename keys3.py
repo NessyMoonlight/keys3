@@ -1,4 +1,8 @@
-kt = int(input('Укажите котегорию налогоплатильщика:'))
+# Case-study #3
+# Developers:
+#
+
+taxpayer_category = int(input('Укажите котегорию налогоплатильщика:'))
 
 MAX_MONTH = 1
 
@@ -78,11 +82,11 @@ def f_3():
     return amount, beznal
 
 
-if kt == 1:
+if taxpayer_category == 1:
     f_1()
-elif kt == 2:
+elif taxpayer_category == 2:
     f_2()
-elif kt == 3:
+elif taxpayer_category == 3:
     f_3()
 else:
     print('Такой котегории нет')
