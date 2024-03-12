@@ -16,12 +16,14 @@ def f_1():
     amount = 0
     tax = 0
     free_tax = 0
+    print(ru.ANNUAL_INCOME_VALUE)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.ANNUAL_INCOME_VALUE} {ru.INCOME} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
     # Годовой доход
+    print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.TAX_FREE_AMOUNT} {ru.TAX} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.TAX} {ru.NAME[month]} [USD]: '))
         free_tax += value
     bezamount = amount - free_tax  # годовой доход неучитываемый налогом
     # Налог если доход < 9075
@@ -42,12 +44,14 @@ def f_2():
     amount = 0
     tax = 0
     free_tax = 0
+    print(ru.ANNUAL_INCOME_VALUE)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.ANNUAL_INCOME_VALUE} {ru.INCOME} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
     # Годовой доход
+    print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.TAX_FREE_AMOUNT} {ru.TAX} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.TAX} {ru.NAME[month]} [USD]: '))
         free_tax += value
     bezamount = amount - free_tax  # годовой доход неучитываемый налогом
     # Налог если доход < 18150
@@ -68,12 +72,14 @@ def f_3():
     amount = 0
     tax = 0
     free_tax = 0
+    print(ru.ANNUAL_INCOME_VALUE)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.ANNUAL_INCOME_VALUE} {ru.INCOME} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
     # Годовой доход
+    print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.TAX_FREE_AMOUNT} {ru.TAX} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.TAX} {ru.NAME[month]} [USD]: '))
         free_tax += value
     bezamount = amount - free_tax  # годовой доход неучитываемый налогом
     # Налог если доход < 12950
