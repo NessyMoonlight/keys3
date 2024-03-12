@@ -1,5 +1,5 @@
 # Case-study #3
-# Developers: Borodin Artemiy, Solovyeva Maria,
+# Developers: Borodin Artemiy, Solovyova Maria,
 # Selikhova Polina, Lyamin Egor
 #
 
