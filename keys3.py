@@ -12,7 +12,7 @@ nl = '\n'
 MAX_MONTH = 12
 
 
-def f_1():
+def one_person():
     amount = 0
     tax = 0
     free_tax = 0
@@ -23,24 +23,24 @@ def f_1():
     # Годовой доход
     print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.TAX} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
-    bezamount = amount - free_tax  # годовой доход неучитываемый налогом
+    tax_amount = amount - free_tax  # годовой доход неучитываемый налогом
     # Налог если доход < 9075
-    if bezamount <= 9075:
-        tax = (bezamount / 10)
+    if tax_amount <= 9075:
+        tax = (tax_amount / 10)
     # Налог если доход < 36900
-    elif 36901 > bezamount > 9075:
-        tax = ((((bezamount - 9075) / 100) * 15) + (9075 / 100) * 10)
+    elif 36901 > tax_amount > 9075:
+        tax = ((((tax_amount - 9075) / 100) * 15) + (9075 / 100) * 10)
         # Налог если доход > 36900
     else:
-        tax = ((((bezamount - 36900) / 100) * 25) + (((36900 - 9075) / 100) * 15) + (9075 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {bezamount} {nl} '
+        tax = ((((tax_amount - 36900) / 100) * 25) + (((36900 - 9075) / 100) * 15) + (9075 / 100) * 10)
+    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {tax_amount} {nl} '
           f'{ru.ANNUAL_TAX} {tax} {nl} {ru.MONTHLY_TAX} {tax/12}')
     return amount, free_tax
 
 
-def f_2():
+def married_couple():
     amount = 0
     tax = 0
     free_tax = 0
@@ -51,24 +51,24 @@ def f_2():
     # Годовой доход
     print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.TAX} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
-    bezamount = amount - free_tax  # годовой доход неучитываемый налогом
+    tax_amount = amount - free_tax  # годовой доход неучитываемый налогом
     # Налог если доход < 18150
-    if bezamount <= 18150:
-        tax = (bezamount / 10)
+    if tax_amount <= 18150:
+        tax = (tax_amount / 10)
     # Налог если доход < 73800
-    elif 73801 > bezamount > 18150:
-        tax = ((((bezamount - 18150) / 100) * 15) + (18150 / 100) * 10)
+    elif 73801 > tax_amount > 18150:
+        tax = ((((tax_amount - 18150) / 100) * 15) + (18150 / 100) * 10)
         # Налог если доход > 73800
     else:
-        tax = ((((bezamount - 73800) / 100) * 25) + (((73800 - 18150) / 100) * 15) + (18150 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {bezamount} {nl} '
+        tax = ((((tax_amount - 73800) / 100) * 25) + (((73800 - 18150) / 100) * 15) + (18150 / 100) * 10)
+    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {tax_amount} {nl} '
           f'{ru.ANNUAL_TAX} {tax} {nl} {ru.MONTHLY_TAX} {tax/12}')
     return amount, free_tax
 
 
-def f_3():
+def one_parent():
     amount = 0
     tax = 0
     free_tax = 0
@@ -79,28 +79,28 @@ def f_3():
     # Годовой доход
     print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
-        value = float(input(f'{ru.TAX} {ru.NAME[month]} [USD]: '))
+        value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
-    bezamount = amount - free_tax  # годовой доход неучитываемый налогом
+    tax_amount = amount - free_tax  # годовой доход неучитываемый налогом
     # Налог если доход < 12950
-    if bezamount <= 12950:
-        tax = (bezamount / 10)
+    if tax_amount <= 12950:
+        tax = (tax_amount / 10)
     # Налог если доход < 49400
-    elif 49401 > bezamount > 12950:
-        tax = ((((bezamount - 12950) / 100) * 15) + (12950 / 100) * 10)
+    elif 49401 > tax_amount > 12950:
+        tax = ((((tax_amount - 12950) / 100) * 15) + (12950 / 100) * 10)
         # Налог если доход > 49400
     else:
-        tax = ((((bezamount - 49400) / 100) * 25) + (((49400 - 12950) / 100) * 15) + (12950 / 100) * 10)
-    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {bezamount} {nl} '
+        tax = ((((tax_amount - 49400) / 100) * 25) + (((49400 - 12950) / 100) * 15) + (12950 / 100) * 10)
+    print(f'{ru.TAX_FREE_INCOME} {free_tax} {nl} {ru.TAX_INCOME} {tax_amount} {nl} '
           f'{ru.ANNUAL_TAX} {tax} {ru.MONTHLY_TAX} {tax/12}')
     return amount, free_tax
 
 
 if taxpayer_category == 1:
-    f_1()
+    one_person()
 elif taxpayer_category == 2:
-    f_2()
+    married_couple()
 elif taxpayer_category == 3:
-    f_3()
+    one_parent()
 else:
     print(ru.NO_CATEGORY)
