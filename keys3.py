@@ -15,23 +15,29 @@ def one_person():
     The function determines the
     amount of tax for one entity.
     '''
+
     amount = 0
     tax = 0
     free_tax = 0
     nl = '\n'
+
     # Calculating annual income by month.
     print(ru.ANNUAL_INCOME_VALUE)
+
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
     print(f'{ru.ANNUAL_INCOME} ${amount:.2f}')
+
     # Calculating of the annual tax-free amount by month.
     print(ru.TAX_FREE_AMOUNT)
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
+
     # Annual taxable income.
     tax_amount = amount - free_tax
+
     # Tax calculation by stages.
     if tax_amount < 9076:
         tax = (tax_amount * 0.1)
@@ -50,6 +56,7 @@ def one_person():
     else:
         tax = (((tax_amount - 406750) * 0.396) + ((406750 - 405100) * 0.35) + ((405100 - 186350) * 0.33) +
                ((186350 - 89350) * 0.28) + ((89350 - 36900) * 0.25) + ((36900 - 9075) * 0.15) + (9075 * 0.1))
+
     print(f'{ru.TAX_FREE_INCOME} ${free_tax:.2f} {nl} {ru.TAX_INCOME} ${tax_amount:.2f} {nl} '
           f'{ru.ANNUAL_TAX} ${tax:.2f} {nl} {ru.MONTHLY_TAX} ${(tax/12):.2f}')
     return amount, free_tax
@@ -60,23 +67,30 @@ def married_couple():
     The function determines the
     amount of tax for a married couple.
     '''
+
     amount = 0
     tax = 0
     free_tax = 0
     nl = '\n'
+
     # Calculating annual income by month.
     print(ru.ANNUAL_INCOME_VALUE)
+
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
     print(f'{ru.ANNUAL_INCOME} ${amount:.2f}')
+
     # Calculating of the annual tax-free amount by month.
     print(ru.TAX_FREE_AMOUNT)
+
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
+
     # Annual taxable income.
     tax_amount = amount - free_tax
+
     # Tax calculation by stages.
     if tax_amount < 18151:
         tax = (tax_amount * 0.1)
@@ -95,6 +109,7 @@ def married_couple():
     else:
         tax = (((tax_amount - 457600) * 0.396) + ((457600 - 405100) * 0.35) + ((405100 - 226850) * 0.33) +
                ((226850 - 148850) * 0.28) + ((148850 - 73800) * 0.25) + ((73800 - 18150) * 0.15) + (18150 * 0.1))
+
     print(f'{ru.TAX_FREE_INCOME} ${free_tax:.2f} {nl} {ru.TAX_INCOME} ${tax_amount:.2f} {nl} '
           f'{ru.ANNUAL_TAX} ${tax:.2f} {nl} {ru.MONTHLY_TAX} ${(tax/12):.2f}')
     return amount, free_tax
@@ -105,23 +120,30 @@ def one_parent():
     The function determines the
     amount of tax for one parent.
     '''
+
     amount = 0
     tax = 0
     free_tax = 0
     nl = '\n'
+
     # Calculating annual income by month.
     print(ru.ANNUAL_INCOME_VALUE)
+
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.INCOME} {ru.NAME[month]} [USD]: '))
         amount += value
     print(f'{ru.ANNUAL_INCOME} ${amount:.2f}')
+
     # Calculating of the annual tax-free amount by month.
     print(ru.TAX_FREE_AMOUNT)
+
     for month in range(1, MAX_MONTH + 1):
         value = float(input(f'{ru.TAX_FREE} {ru.NAME[month]} [USD]: '))
         free_tax += value
+
     # Annual taxable income.
     tax_amount = amount - free_tax
+
     # Tax calculation by stages.
     if tax_amount < 12951:
         tax = (tax_amount * 0.1)
@@ -140,6 +162,7 @@ def one_parent():
     else:
         tax = (((tax_amount - 432200) * 0.396) + ((406751 - 405100) * 0.35) + ((405100 - 206600) * 0.33) +
                ((206600 - 127550) * 0.28) + ((127550 - 49400) * 0.25) + ((49400 - 12950) * 0.15) + (12950 * 0.1))
+
     print(f'{ru.TAX_FREE_INCOME} ${free_tax:.2f} {nl} {ru.TAX_INCOME} ${tax_amount:.2f} {nl} '
           f'{ru.ANNUAL_TAX} ${tax:.2f} {nl} {ru.MONTHLY_TAX} ${(tax / 12):.2f}')
     return amount, free_tax
