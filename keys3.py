@@ -155,5 +155,6 @@ def main():
     else:
         print(ru.NO_CATEGORY)
 
+
 if __name__ == '__main__':
    main()
